@@ -1,5 +1,11 @@
 Zero::Application.routes.draw do
   
+  resources :photos
+
+
+  resources :blogs
+
+
   get "pages/home"
   get "pages/images"
   get "pages/posts"
