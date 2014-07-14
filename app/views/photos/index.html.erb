@@ -1,20 +1,23 @@
-<% provide(:title, 'Blogs') %>
+<% provide(:title, 'Photos') %>
 
-<h1>Blogs</h1>
+<h1>Photos</h1>
 
 <div id=content>
 
-<% @blogs.each do |blog| %>
 
-<h4 id=hasatu><%= blog.name %></h4>
-Posted at <%= blog.created_at.strftime("%d %B %Y") %><br><br>
-
-<%= blog.description.truncate(300).html_safe %><br>
-
-<%= link_to 'Show more', blog %>
-<br><br><br>    
+<% @photos.each do |photo| %>
+    <div id=foto>
+	
+    <h4 id=hasatu><%= photo.name %></h4>
+	<%= photo.created_at.strftime("%d %B %Y") %><br><br>
+	<td><%= image_tag photo.picture_url(:thumb) if photo.picture? %>
+	<br>
+	<%= photo.caption %><br>
+    <%= link_to 'Show', photo %>
+	</div>
+	
 <% end %>
 
-<%= will_paginate @blogs %>  
+<%= will_paginate @photos %>
 
 </div>

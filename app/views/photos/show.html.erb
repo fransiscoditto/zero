@@ -1,39 +1,41 @@
 <p id="notice"><%= notice %></p>
-<% provide(:title, 'Posts') %>
+<% provide(:title, 'Show') %>
 
 <div id=content>
-  <h4 id=hasatu><%= @blog.name %></h4>
-  Posted at <%= @blog.created_at.strftime("%d %B %Y") %><br><br>
-  <%= @blog.description.html_safe %><br><br>
 
-<a href="/posts">Back</a>
+  <h4><%= @photo.name %></h4>
+  <%= @photo.created_at.strftime("%d %B %Y") %><br><br>
+  <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %><br><br>
+  <%= @photo.caption %><br><br>
+<a href="/images">Back</a>
 
-<hr>  
-  
+<hr>
+
   <h4 id=hasatu>Comments</h4>
-<% @blog.blogcomments.each do |blogcomment| %>
-<p>
-<strong><%= blogcomment.username %></strong> said..<br>
-<%= blogcomment.body %>
-</p>  
+<% @photo.photocomments.each do |photocomment| %>
+  <p><strong><%= photocomment.username %></strong> said..<br>
+  <%= photocomment.body %>
   
-  <% end %>
+  <br><br>
+  </p>
+  
+<% end %>
 
-<hr>  
+<hr>
   
   <h4 id=hasatu>Tell us what you think:</h4><br>
-<%= form_for([@blog, @blog.blogcomments.build]) do |f| %>
+<%= form_for([@photo, @photo.photocomments.build]) do |f| %>
   <p>
     <%= f.label :Name %><br>
     <%= f.text_field :username %>
   </p>
   <p>
-    <%= f.label :comment %><br>
+    <%= f.label :Comment %><br>
     <%= f.text_area :body %>
   </p>
   <p>
     <%= f.submit "Tell" %>
   </p>
 <% end %>
-
+  
 </div>
