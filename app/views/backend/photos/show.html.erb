@@ -10,24 +10,26 @@
   <%= link_to 'Edit', edit_backend_photo_path(@photo) %> |
 <%= link_to 'Back', backend_photos_path %><br><br>
   
+  
+  
+  
+  
+  
+  
+    
   <h4 id=hasatu>Comments</h4>
 <% @photo.photocomments.each do |photocomment| %>
-  <p>
-    <strong>Name : </strong>
+  <p>    <strong>Name : </strong>
     <%= photocomment.username %>
-  </p>
- 
+  </p> 
   <p>
     <strong>Comment:</strong>
     <%= photocomment.body %>
-  </p>
-
+  </p>`
   <p>
   <%= link_to 'Destroy Comment', [photocomment.photo, photocomment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
-
-<% end %>  
-  
+<% end %>    
 </div>

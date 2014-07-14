@@ -38,7 +38,7 @@ We are an Indonesian Post Punk Band from Jakarta, Indonesia.</b>
 
 <h5 id=hadua><%= blog.name %></h5>
 <%= blog.created_at.strftime("%D") %><br>
-<%= blog.description.truncate(300).html_safe %><br><br>
+<%= blog.content.truncate(300).html_safe %><br><br>
 
 <% end %>
 

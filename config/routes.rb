@@ -1,15 +1,13 @@
 Zero::Application.routes.draw do
   
+  resources :photos do
   resources :photocomments
+  end
 
 
+  resources :blogs do
   resources :blogcomments
-
-
-  resources :photos
-
-
-  resources :blogs
+  end
 
 
   get "pages/home"  
@@ -24,11 +22,12 @@ Zero::Application.routes.draw do
   match '/contact', to: 'pages#contact'
   match '/backend', to: 'pages#backend'
   
+  resources :uploads 
+  
   namespace :backend do  
-     
-	resources :blogs
-	resources :photos
-	
+    root :to => 'pages#backend'  
+	resources :blogs   
+	resources :photos	
   end
 
   # The priority is based upon order of creation:

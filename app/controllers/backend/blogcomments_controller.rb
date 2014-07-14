@@ -1,4 +1,4 @@
-class BlogcommentsController < InheritedResources::Base
+class Backend::BlogcommentsController < InheritedResources::Base
 def create
     @blog = Blog.find(params[:blog_id])
 	@blogcomment = @blog.blogcomments.create(params[:blogcomment])
@@ -11,5 +11,7 @@ def create
     @blogcomment.destroy
     redirect_to blog_path(@blog)
   end
+
+
 
 end

@@ -7,10 +7,11 @@ def create
  end
  
  def destroy
-    @photo = Photo.find(params[:photo_id])
+    @photo = Photo.find(params[:blog_id])
 	@photocomment = @photo.photocomments.find(params[:id])
     @photocomment.destroy
     redirect_to photo_path(@photo)
   end
+
 
 end

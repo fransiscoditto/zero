@@ -4,7 +4,7 @@
 <div id=content>
   <h4 id=hasatu><%= @blog.name %></h4>
   Posted at <%= @blog.created_at.strftime("%d %B %Y") %><br><br>
-  <%= @blog.description.html_safe %><br><br>
+  <%= @blog.content.html_safe %><br><br>
 
 <a href="/posts">Back</a>
 

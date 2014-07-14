@@ -13,7 +13,7 @@
 <% @blogs.each do |blog| %>
   <tr>
     <td><%= blog.name %></td>
-    <td><%= blog.description.html_safe %></td>	
+    <td><%= blog.content.html_safe %></td>	
 	
 	<td><%= link_to 'Show', backend_blog_path(blog)  %>
 	<%= link_to 'Edit', edit_backend_blog_path(blog) %>	
