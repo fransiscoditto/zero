@@ -11,11 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140714014543) do
+ActiveRecord::Schema.define(:version => 20140714041214) do
+
+  create_table "blogcomments", :force => true do |t|
+    t.string   "username"
+    t.text     "body"
+    t.integer  "blog_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "blogs", :force => true do |t|
     t.string   "name"
     t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "photocomments", :force => true do |t|
+    t.string   "username"
+    t.text     "body"
+    t.integer  "photo_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -14,6 +14,8 @@ gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
 gem 'will_paginate'
 
+gem 'inherited_resources'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

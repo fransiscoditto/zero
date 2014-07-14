@@ -9,7 +9,7 @@
 <h4 id=hasatu><%= blog.name %></h4>
 Posted at <%= blog.created_at.strftime("%d %B %Y") %><br><br>
 
-<%= blog.description.truncate(300).html_safe %><br>
+<%= blog.content.truncate(300).html_safe %><br>
 
 <%= link_to 'Show more', blog %>
 <br><br><br>    
