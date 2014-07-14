@@ -1,0 +1,37 @@
+<% provide(:title, 'Home') %>
+<%= render 'layouts/slide' %>
+<br>
+<%= render 'layouts/navigation' %>
+<h1>Home</h1>
+<div id=content>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").mouseenter(function(){
+    $("#panel").slideToggle("slow");
+	$("#flip").animate({
+	opacity:'0.1'});
+	});
+  $("#flip").mouseleave(function(){
+    $("#panel").slideToggle("slow");
+	$("#flip").animate({
+	opacity:'1'});
+	});
+  });
+
+</script>
+
+<body>
+ 
+<div id="flip"><b>HI!</b></div>
+<div id="panel">
+<b>Welcome to our site!
+<br><br>
+We are an Indonesian Post Punk Band from Jakarta, Indonesia.</b>
+</div>
+
+<hr>
+
+</div>
+</body>
+</html>

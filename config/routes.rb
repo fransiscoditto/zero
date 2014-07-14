@@ -1,4 +1,20 @@
 Zero::Application.routes.draw do
+  
+  get "pages/home"
+  get "pages/images"
+  get "pages/posts"
+  get "pages/about" 
+  get "pages/contact"  
+  get "pages/backend"  
+    
+  match '/home',    to: 'pages#home'  
+  match '/mv',    to: 'pages#mv'
+  match '/about',   to: 'pages#about'
+  
+  
+  match '/contact', to: 'pages#contact'
+  match '/backend', to: 'pages#backend'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
